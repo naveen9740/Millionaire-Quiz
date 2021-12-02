@@ -100,4 +100,48 @@ export const data = [
       },
     ],
   },
+  {
+    id: 5,
+    question: "First Ipl Champions?",
+    answers: [
+      {
+        text: "MI",
+        correct: false,
+      },
+      {
+        text: "RCB",
+        correct: false,
+      },
+      {
+        text: "RR",
+        correct: true,
+      },
+      {
+        text: "CSK",
+        correct: false,
+      },
+    ],
+  },
+  {
+    id: 6,
+    question: "The Real Name of Actor 'ROCK'",
+    answers: [
+      {
+        text: "Roman",
+        correct: false,
+      },
+      {
+        text: "Dwayne",
+        correct: true,
+      },
+      {
+        text: "Naveen",
+        correct: false,
+      },
+      {
+        text: "John",
+        correct: false,
+      },
+    ],
+  },
 ];

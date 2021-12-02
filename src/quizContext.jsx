@@ -6,6 +6,7 @@ export const QuizContext = ({ children }) => {
   const [stop, setStop] = useState(false);
   const [earned, setEarned] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(1);
+  const [username, setUsername] = useState();
   return (
     <Context.Provider
       value={{
@@ -17,6 +18,8 @@ export const QuizContext = ({ children }) => {
         data,
         earned,
         setEarned,
+        username,
+        setUsername,
       }}
     >
       {children}
