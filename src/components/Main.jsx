@@ -1,3 +1,11 @@
 export const Main = () => {
-  return <div className="main">main</div>;
+  return (
+    <div className="main">
+      <div className="top">
+        <div className="timer">30</div>
+      </div>
+
+      <div className="bottom">question and answers</div>
+    </div>
+  );
 };
