@@ -3,17 +3,20 @@ import { moneyPyramid, data } from "./data";
 
 const Context = createContext();
 export const QuizContext = ({ children }) => {
-  const [timeout, setTimeout] = useState(false);
+  const [stop, setStop] = useState(false);
+  const [earned, setEarned] = useState(0);
   const [questionNumber, setQuestionNumber] = useState(1);
   return (
     <Context.Provider
       value={{
-        timeout,
-        setTimeout,
+        stop,
+        setStop,
         questionNumber,
         setQuestionNumber,
         moneyPyramid,
         data,
+        earned,
+        setEarned,
       }}
     >
       {children}

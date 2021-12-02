@@ -2,12 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuizContext } from "../quizContext";
 
 export const Trivia = () => {
-  let {
-    data,
-    setTimeout: { setStop },
-    questionNumber,
-    setQuestionNumber,
-  } = useQuizContext();
+  let { data, setStop, questionNumber, setQuestionNumber } = useQuizContext();
 
   const [question, setQuestion] = useState(null);
   const [selectedAns, setSelectedAns] = useState(null);
@@ -30,7 +25,16 @@ export const Trivia = () => {
                 setTimeout(() => {
                   console.log("eee");
                   setClassName(ans.correct ? "answer correct" : "answer wrong");
-                }, 2000);
+                }, 1000);
+                setTimeout(() => {
+                  if (ans.correct) {
+                    setQuestionNumber((prev) => prev + 1);
+                    setSelectedAns(null);
+                  } else {
+                    console.log("wrrr");
+                    setStop(true);
+                  }
+                }, 3500);
               }}
             >
               {ans.text}

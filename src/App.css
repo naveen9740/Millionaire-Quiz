@@ -139,3 +139,9 @@
   font-size: 20px;
   font-weight: 300;
 }
+.endText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
