@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useQuizContext } from "../quizContext";
 export const Pyramid = () => {
   let { moneyPyramid, questionNumber, earned, setEarned } = useQuizContext();
+
   useEffect(() => {
     questionNumber > 1 &&
       setEarned(moneyPyramid.find((m) => m.id === questionNumber - 1).amount);

@@ -1,9 +1,23 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useQuizContext } from "../quizContext";
 import { Trivia } from "./Trivia";
 
 export const Main = () => {
-  let { stop, earned } = useQuizContext();
+  let { stop, earned, setStop, questionNumber } = useQuizContext();
+
+  let [time, setTime] = useState(30);
+
+  useEffect(() => {
+    if (time === 0) return setStop(true);
+    const interval = setTimeout(() => {
+      time >= 1 && setTime(time - 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [time, stop]);
+
+  useEffect(() => {
+    setTime(30);
+  }, [questionNumber]);
 
   return (
     <div className="main">
@@ -12,7 +26,7 @@ export const Main = () => {
       ) : (
         <>
           <div className="top">
-            <div className="timer">30</div>
+            <div className="timer">{time}</div>
           </div>
 
           <div className="bottom">
