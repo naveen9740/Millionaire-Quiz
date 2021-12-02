@@ -68,7 +68,45 @@
 }
 .answer:hover,
 .answer.active {
-  background-color: #10105c;
+  background-color: #1f1fa1;
+}
+.answer.correct {
+  animation: correct 3s ease forwards;
+}
+@keyframes correct {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: #10105c;
+  }
+  62%,
+  100% {
+    background: green;
+  }
+}
+.answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+@keyframes wrong {
+  0%,
+  22%,
+  42% {
+    background: mediumblue;
+  }
+  20%,
+  40%,
+  60% {
+    background: #10105c;
+  }
+  62%,
+  100% {
+    background: crimson;
+  }
 }
 
 .pyramid {

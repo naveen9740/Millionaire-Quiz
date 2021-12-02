@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { moneyPyramid } from "../data";
+import { useQuizContext } from "../quizContext";
 export const Pyramid = () => {
-  const [qNum, setQNum] = useState(1);
+  let { qNum, moneyPyramid } = useQuizContext();
   return (
     <div className="pyramid">
       <ul className="moneylist">

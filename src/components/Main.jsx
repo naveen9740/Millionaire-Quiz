@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useQuizContext } from "../quizContext";
 import { Trivia } from "./Trivia";
 
 export const Main = () => {
